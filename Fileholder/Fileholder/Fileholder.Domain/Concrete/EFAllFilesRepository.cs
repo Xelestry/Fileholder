@@ -29,6 +29,7 @@ namespace Fileholder.Domain.Concrete
                 }
 
                 SqlParameter param = new SqlParameter("@file_guid", fileGuidFolder);
+
                 var files = context.Database.SqlQuery<AllFiles>("SELECT * FROM GetFileByFileGuid (@file_guid)", param);
 
                 foreach (var item in files)
