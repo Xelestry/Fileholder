@@ -146,3 +146,38 @@ WHERE group_file_id = (
 	END
 END
 GO
+
+---------------------------------------------------------------------------------
+FUNCTION GetFileByFileGuid
+---------------------------------------------------------------------------------
+CREATE FUNCTION GetFileByFileGuid
+(	
+	-- Add the parameters for the function here
+	@file_guid NVARCHAR
+)
+RETURNS TABLE 
+AS
+RETURN 
+(
+SELECT af.file_id AS FileId, af.file_name AS FileName, af.file_extension AS FileExtension, af.file_size AS FileSize
+FROM all_files af
+JOIN all_files_and_group_files_link afgf ON af.file_id = afgf.file_id
+JOIN group_file_of_one_upload gfou ON afgf.group_file_id = gfou.group_file_id
+WHERE gfou.group_file_guid = @file_guid
+)
+GO
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
