@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+@using (Ajax.BeginForm("SaveFiles", "UploadFiles", null, new AjaxOptions
+{
+    UpdateTargetId = "results",
+    LoadingElementId = "loading",
+}, new { enctype = "multipart/form-data" }))
+{
+    <div class="d-flex flex-column">
+        <label for="file" class="Site-body-content" id="wordshift">
+            <label for="file" id="Change-first-hidden-text" class="Site-not-hidden-text">Наведите мышку</label>
+            <label for="file" id="Change-second-hidden-text" class="Site-hidden-text">Нажмите, для выбора файлов<br />Максимальный размер: 100мб</label><br />
+            <label for="file" id="Change-third-hidden-text"></label>
+        </label>
+
+        <input class="custom-file-input main_input_file" type="file" hidden="hidden" multiple="multiple" name="file" id="file" @*accept="image"*@ />
+        <div class="d-flex bg-dark">
+            <input class="f_name p-2 flex-fill" type="text" id="f_name" value="Файл не выбран" disabled>
+            <button type="submit" class="btn btn-outline-danger p-2 flex-fill" id="change-disabled" disabled>Добавить</button>
+        </div>
+    </div>
+}
+<div id="loading" style="display:none; color:Red; font-weight:bold;">
+    <p>Идет загрузка...</p>
+</div>
+<div id="results"></div>
+
+@section Scripts {
+    
+}
+
+
+
+
+
+
+
+

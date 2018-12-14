@@ -1,0 +1,134 @@
+﻿@model List<Fileholder.Models.ShowUploadedFilesViewModel>
+
+@{
+    ViewBag.Title = "SaveFiles";
+}
+
+@if (Request.IsAuthenticated && Model.First().UserLogin == ViewBag.CurrentUser)
+{
+    <div class="container">
+        <div class="container-fluid bg-dark text-white border border-warning">
+            <h2>Ссылка для скачивания: @ViewBag.LinkForDownload</h2>
+        </div>
+        <div id="accordion">
+            @{
+                int collapseCounter = 1;
+            }
+            <div class="d-flex " style="height:500px;">
+                <div class="p-2 flex-fill bg-info ">
+                    <p class="Site-file-font-description">Дата загрузки: @Model.First().FileUploadTime</p>
+                    <p class="Site-file-font-description">Дата удаления: @Model.First().FileDeleteTime</p>
+                    <p class="Site-file-font-description">Имя пользователя: @Model.First().UserLogin</p>
+                    <p class="Site-file-font-description">Размер файлов: @Model.First().TotalSizeAllFiles</p>
+                    <p class="Site-file-font-description">Количество скачиваний: @Model.First().NumberOfDownload</p>
+                    <div class="container">
+                        @Html.ActionLink("Скачать все файлы", "DownloadAllFiles", "DownloadFiles", new { fileGuid = Model.First().FileGuid }, new { @class = "btn btn-warning btn-lg", type = "button " })
+                        @Html.ActionLink("Удалить файлы", "DeleteFiles", "UploadFiles", new { fileGuid = Model.First().FileGuid }, new { @class = "btn btn-danger btn-lg", type = "button " })
+                    </div>
+                    @*ПАРОЛЬ:
+                    @using (Ajax.BeginForm("SetPassword", "FileConfigs", new AjaxOptions {UpdateTargetId = "results", HttpMethod = "POST" }))
+                    {
+                        <input id="" type="text" name="pass" />
+                        <input id="" type="submit" value="Подтвердить" />
+                    }
+                    <div id="results"></div>*@
+                </div>
+                <div class="p-2 flex-column " style="opacity: 1;"></div>
+                <div class="p-2 flex-fill scroll-block Site-right-block">
+                    @{
+                        foreach (var item in Model)
+                        {
+                            <div class="card " id="list-item-@collapseCounter" style="background-color: #A49D31;">
+                                <div class="card-header " data-toggle="collapse" href="#Collapse-@collapseCounter">
+                                    <a class="card-link Site-file-font-description text-dark" data-toggle="collapse" href="#Collapse-@collapseCounter">
+                                        @item.FileName
+                                    </a>
+                                </div>
+                                <div id="Collapse-@collapseCounter" class="collapse" data-parent="#accordion">
+                                    <div class="card-body bg-dark border-warning text-white">
+                                        Вес файла: @item.FileSize<br />
+                                        @{
+                                            if (item.FileExtension == ".jpg" ||
+                                                    item.FileExtension == ".jpeg" ||
+                                                    item.FileExtension == ".png")
+                                            {
+                                                Html.RenderPartial("OnePictureFile", item);
+                                            } }
+                                        <div>
+
+                                            @Html.ActionLink("Скачать файл", "DownloadOneFile", "DownloadFiles", new { fileId = item.FileId }, new { @class = "btn btn-warning", type = "button " })
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            collapseCounter++;
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+}
+else if (Model.First().FilePassword == null)
+{
+    <div class="container">
+        <div class="container-fluid bg-dark text-white border border-warning">
+            <h2>Ссылка для скачивания: @ViewBag.LinkForDownload</h2>
+        </div>
+        <div id="accordion">
+            @{
+                int collapseCounter = 1;
+            }
+            <div class="d-flex " style="height:500px;">
+                <div class="p-2 flex-fill bg-info ">
+                    <p class="Site-file-font-description">Дата загрузки: @Model.First().FileUploadTime</p>
+                    <p class="Site-file-font-description">Имя пользователя: @Model.First().UserLogin</p>
+                    <p class="Site-file-font-description">Размер файлов: @Model.First().TotalSizeAllFiles</p>
+                    <p class="Site-file-font-description">Количество скачиваний: @Model.First().NumberOfDownload</p>
+                    <p class="Site-file-font-description">Дата удаления: @Model.First().FileDeleteTime</p>
+                    <div class="container">
+                        @Html.ActionLink("Скачать все файлы", "DownloadAllFiles", "DownloadFiles", new { fileGuid = Model.First().FileGuid }, new { @class = "btn btn-warning btn-lg", type = "button " })
+                    </div>
+                </div>
+                <div class="p-2 flex-column " style="opacity: 1;"></div>
+                <div class="p-2 flex-fill scroll-block Site-right-block">
+                    @{
+                        foreach (var item in Model)
+                        {
+                            <div class="card " id="list-item-@collapseCounter" style="background-color: #A49D31;">
+                                <div class="card-header " data-toggle="collapse" href="#Collapse-@collapseCounter">
+                                    <a class="card-link Site-file-font-description text-dark" data-toggle="collapse" href="#Collapse-@collapseCounter">
+                                        @item.FileName
+                                    </a>
+                                </div>
+                                <div id="Collapse-@collapseCounter" class="collapse" data-parent="#accordion">
+                                    <div class="card-body bg-dark border-warning text-white">
+                                        Вес файла: @item.FileSize<br />
+                                        @{
+                                            if (item.FileExtension == ".jpg" ||
+                                                    item.FileExtension == ".jpeg" ||
+                                                    item.FileExtension == ".png")
+                                            {
+                                                Html.RenderPartial("OnePictureFile", item);
+                                            } }
+                                        <div>
+
+                                            @Html.ActionLink("Скачать файл", "DownloadOneFile", "DownloadFiles", new { fileId = item.FileId }, new { @class = "btn btn-warning", type = "button " })
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            collapseCounter++;
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    <div>Для доступа к файлу введите пароль</div>
+}
+
+

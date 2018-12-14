@@ -1,0 +1,19 @@
+﻿@model Fileholder.Domain.Entities.UserFiles
+
+
+
+<div class="" data-toggle="modal" data-target="#myModal-@Model.FileId">
+    <img src="~/AllUsersFiles/@Model.FileGuidFolder/@Model.FileId/@Model.FileName" width="120" style="cursor:zoom-in"/>
+</div>
+<div id="myModal-@Model.FileId" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content modal-lg">
+      <div class="modal-body modal-lg">
+          <img src="~/AllUsersFiles/@Model.FileGuidFolder/@Model.FileId/@Model.FileName" style="width:100%;"/>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

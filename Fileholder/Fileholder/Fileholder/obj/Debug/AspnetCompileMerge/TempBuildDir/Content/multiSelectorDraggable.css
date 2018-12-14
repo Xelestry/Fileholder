@@ -1,0 +1,113 @@
+﻿
+ul.guid-multi-selector-selected
+,ul.guid-multi-selector-available
+{
+    background-color:#BBBCAE;
+    padding: 10px;
+    margin: 0px;
+    border:1px dashed #E8E8E3;
+    width:274px;
+    margin-left:5px;
+    margin-right:5px;
+    min-height:35px;
+    max-height:270px;
+    overflow-y:auto;
+}
+
+ul.guid-multi-selector-selected>li
+,ul.guid-multi-selector-available>li
+{
+    padding: 3px;
+    margin: 3px 0px 3px 0px;
+    list-style: none;
+    cursor:move;
+}
+
+div.gridMultiSelector-choice
+{
+    display:none;/*Default is hidden*/
+    background-color:#E1E1DB;
+    padding-bottom:20px;
+    margin-top:10px;
+    margin-bottom: 5px;
+    width:310px;/*Animation value*/
+    margin-left:300px;/*Animation value*/
+    height:0px;/*Animation value*/
+    overflow: hidden;
+    position: relative;
+}
+
+div.gridMultiSelector-description
+{
+    width:372px;
+    height:auto;
+    min-height:16px;
+    margin-top: 5px;
+    margin-bottom: 8px;
+    border: 1px solid #9F9F9F;
+    line-height:16px;
+    padding: 3px 15px 3px 2px;
+    color:black;
+    font-size:13px;
+    cursor:pointer;
+    background-image:url('Images/multiSelectorPointerIcon.png');
+    background-repeat:no-repeat;
+    background-position:96% 3px;
+    background-color: #ffffff;
+    max-height: 75px;
+    overflow-y: auto;
+}
+
+div.gridMultiSelector-choice h4
+{
+    margin:0px;
+    margin-left: 6px;
+}
+
+/*Place holder size*/
+div.gridMultiSelector-choice li.ui-state-highlight
+{
+    height:20px;
+}
+
+div.gridMultiSelector-choice div.gridMultiSelector-choice-single
+{
+    float:left;
+    
+}
+
+div.gridMultiSelector-container-choice
+{
+    width:612px;
+}
+
+span.gridMultiSelector-message-information
+{
+    font-style:italic;
+    background-color:#E1E1DB;
+    position: absolute;
+    bottom: 0;
+    opacity: 0.6;
+    margin-left: 10px;
+}
+
+div.gridMultiSelector-header-left h4 
+{
+    float:left;
+}
+
+div.gridMultiSelector-header-left img
+{
+    float:right;
+    margin-right:5px;
+}
+
+div.gridMultiSelector-header-right h4
+{
+    float:right;
+}
+
+div.gridMultiSelector-header-right img
+{
+    margin-left:5px;
+}

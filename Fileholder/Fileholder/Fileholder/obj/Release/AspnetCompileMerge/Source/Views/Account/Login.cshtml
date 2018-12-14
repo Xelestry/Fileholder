@@ -1,0 +1,56 @@
+﻿@using Fileholder.Models
+@model LoginViewModel
+@{
+    ViewBag.Title = "Выполнить вход";
+}
+
+
+<div class="container container-fluid bg-dark" style="color: white;">
+    <h2 style="color: white;">@ViewBag.Title</h2>
+    <section id="loginForm">
+        @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+        {
+            @Html.AntiForgeryToken()
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div style="opacity: 0.9;">
+                <div class="form-group container-fluid col-md-6">
+                    @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group container-fluid col-md-6">
+                    @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+                    @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group container-fluid col-md-6">
+                    <div class="checkbox">
+                        @Html.CheckBoxFor(m => m.RememberMe)
+                        @Html.LabelFor(m => m.RememberMe)
+                    </div>
+                </div>
+                <div class="form-group container-fluid col-md-6">
+                    <input type="submit" class="btn btn-default btn-outline-success" value="Войти" style="margin-bottom:30px;" />
+                </div>
+            </div>
+            @* Включите, когда будет включено подтверждение учетной записи для функции сброса пароля
+                <p>
+                    @Html.ActionLink("Забыли пароль?", "ForgotPassword")
+                </p>*@
+        }
+
+    </section>
+</div>
+
+
+
+
+
+
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

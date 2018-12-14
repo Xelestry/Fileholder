@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/Scripts/jquery.validate.min.js")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/Scripts/jquery-3.3.1.min.js")
+    @Scripts.Render("~/Scripts/validate.min.js")
+    @Scripts.Render("~/Scripts/Site.js")
+</head>
+<body class="Site-background-body">
+    <nav class="bg-dark navbar-dark fixed-top" style="height: 60px;">
+        <div class="d-flex justify-content-around mb-3">
+            <div class="p-2 ">
+                <a href="/">
+                    <img class="" src="~/Content/img/logo-fileholder-white.png" />
+                </a>
+                @*<button class="text-white">ВСЕ ФАЙЛЫ(в разработке)</button>*@
+                @Html.ActionLink("Файлы (в разработке)", "ShowAllFiles", "UploadFiles", null, new { type = "button" })
+            </div>
+            <div class="d-flex justify-content-around mb-3">
+                <div class="p-2 ">
+                    @Html.Partial("_LoginPartial")
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container body-content">
+        <div class="text-center">
+            @RenderBody()
+        </div>
+    </div>
+    <div class="bg-dark text-center fixed-bottom" )>
+        <p class="text-white">Created by Xelestry</p>
+    </div>
+
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

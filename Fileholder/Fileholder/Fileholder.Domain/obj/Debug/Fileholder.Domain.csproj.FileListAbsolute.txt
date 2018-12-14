@@ -1,0 +1,66 @@
+C:\Users\Xelestry\Desktop\Asp.net mvc epam\Fileholder\Fileholder\FIleholder.Domain\bin\Debug\FIleholder.Domain.dll
+C:\Users\Xelestry\Desktop\Asp.net mvc epam\Fileholder\Fileholder\FIleholder.Domain\bin\Debug\FIleholder.Domain.pdb
+C:\Users\Xelestry\Desktop\Asp.net mvc epam\Fileholder\Fileholder\FIleholder.Domain\obj\Debug\FIleholder.Domain.csprojAssemblyReference.cache
+C:\Users\Xelestry\Desktop\Asp.net mvc epam\Fileholder\Fileholder\FIleholder.Domain\obj\Debug\FIleholder.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Xelestry\Desktop\Asp.net mvc epam\Fileholder\Fileholder\FIleholder.Domain\obj\Debug\FIleholder.Domain.dll
+C:\Users\Xelestry\Desktop\Asp.net mvc epam\Fileholder\Fileholder\FIleholder.Domain\obj\Debug\FIleholder.Domain.pdb
+C:\Users\Xelestry\Desktop\Asp.net mvc epam\Fileholder\Fileholder\FIleholder.Domain\bin\Debug\Fileholder.Domain.dll.config
+C:\Users\Xelestry\Desktop\Asp.net mvc epam\Fileholder\Fileholder\FIleholder.Domain\bin\Debug\EntityFramework.dll
+C:\Users\Xelestry\Desktop\Asp.net mvc epam\Fileholder\Fileholder\FIleholder.Domain\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Xelestry\Desktop\Asp.net mvc epam\Fileholder\Fileholder\FIleholder.Domain\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\Xelestry\Desktop\Asp.net mvc epam\Fileholder\Fileholder\FIleholder.Domain\bin\Debug\System.Web.Helpers.dll
+C:\Users\Xelestry\Desktop\Asp.net mvc epam\Fileholder\Fileholder\FIleholder.Domain\bin\Debug\System.Web.Mvc.dll
+C:\Users\Xelestry\Desktop\Asp.net mvc epam\Fileholder\Fileholder\FIleholder.Domain\bin\Debug\System.Web.Razor.dll
+C:\Users\Xelestry\Desktop\Asp.net mvc epam\Fileholder\Fileholder\FIleholder.Domain\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Users\Xelestry\Desktop\Asp.net mvc epam\Fileholder\Fileholder\FIleholder.Domain\bin\Debug\System.Web.WebPages.dll
+C:\Users\Xelestry\Desktop\Asp.net mvc epam\Fileholder\Fileholder\FIleholder.Domain\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Users\Xelestry\Desktop\Asp.net mvc epam\Fileholder\Fileholder\FIleholder.Domain\bin\Debug\EntityFramework.xml
+C:\Users\Xelestry\Desktop\Asp.net mvc epam\Fileholder\Fileholder\FIleholder.Domain\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Xelestry\Desktop\Asp.net mvc epam\Fileholder\Fileholder\FIleholder.Domain\bin\Debug\System.Web.Helpers.xml
+C:\Users\Xelestry\Desktop\Asp.net mvc epam\Fileholder\Fileholder\FIleholder.Domain\bin\Debug\System.Web.Mvc.xml
+C:\Users\Xelestry\Desktop\Asp.net mvc epam\Fileholder\Fileholder\FIleholder.Domain\bin\Debug\System.Web.Razor.xml
+C:\Users\Xelestry\Desktop\Asp.net mvc epam\Fileholder\Fileholder\FIleholder.Domain\bin\Debug\System.Web.WebPages.xml
+C:\Users\Xelestry\Desktop\Asp.net mvc epam\Fileholder\Fileholder\FIleholder.Domain\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Users\Xelestry\Desktop\Asp.net mvc epam\Fileholder\Fileholder\FIleholder.Domain\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Users\Xelestry\Desktop\Asp.net mvc epam\Fileholder\Fileholder\FIleholder.Domain\bin\Debug\ru\System.Web.Helpers.resources.dll
+C:\Users\Xelestry\Desktop\Asp.net mvc epam\Fileholder\Fileholder\FIleholder.Domain\bin\Debug\ru\System.Web.Mvc.resources.dll
+C:\Users\Xelestry\Desktop\Asp.net mvc epam\Fileholder\Fileholder\FIleholder.Domain\bin\Debug\ru\System.Web.Razor.resources.dll
+C:\Users\Xelestry\Desktop\Asp.net mvc epam\Fileholder\Fileholder\FIleholder.Domain\bin\Debug\ru\System.Web.WebPages.resources.dll
+C:\Users\Xelestry\Desktop\Asp.net mvc epam\Fileholder\Fileholder\FIleholder.Domain\bin\Debug\ru\System.Web.WebPages.Deployment.resources.dll
+C:\Users\Xelestry\Desktop\Asp.net mvc epam\Fileholder\Fileholder\FIleholder.Domain\bin\Debug\ru\System.Web.WebPages.Razor.resources.dll
+C:\Users\Xelestry\Desktop\Asp.net mvc epam\Fileholder\Fileholder\FIleholder.Domain\obj\Debug\Fileholder.Domain.csproj.CopyComplete
+C:\Users\Xelestry\Desktop\Asp.net mvc epam\Fileholder\Fileholder\FIleholder.Domain\bin\Debug\ru\EntityFramework.resources.dll
+C:\Users\Xelestry\Desktop\Asp.net mvc epam\Fileholder\Fileholder\FIleholder.Domain\bin\Debug\ru\EntityFramework.SqlServer.resources.dll
+C:\Users\Kirill_Mityushchenko\Desktop\Fileholder\Fileholder\FIleholder.Domain\bin\Debug\Fileholder.Domain.dll.config
+C:\Users\Kirill_Mityushchenko\Desktop\Fileholder\Fileholder\FIleholder.Domain\bin\Debug\Fileholder.Domain.dll
+C:\Users\Kirill_Mityushchenko\Desktop\Fileholder\Fileholder\FIleholder.Domain\bin\Debug\Fileholder.Domain.pdb
+C:\Users\Kirill_Mityushchenko\Desktop\Fileholder\Fileholder\FIleholder.Domain\bin\Debug\EntityFramework.dll
+C:\Users\Kirill_Mityushchenko\Desktop\Fileholder\Fileholder\FIleholder.Domain\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Kirill_Mityushchenko\Desktop\Fileholder\Fileholder\FIleholder.Domain\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\Kirill_Mityushchenko\Desktop\Fileholder\Fileholder\FIleholder.Domain\bin\Debug\System.Web.Helpers.dll
+C:\Users\Kirill_Mityushchenko\Desktop\Fileholder\Fileholder\FIleholder.Domain\bin\Debug\System.Web.Mvc.dll
+C:\Users\Kirill_Mityushchenko\Desktop\Fileholder\Fileholder\FIleholder.Domain\bin\Debug\System.Web.Razor.dll
+C:\Users\Kirill_Mityushchenko\Desktop\Fileholder\Fileholder\FIleholder.Domain\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Users\Kirill_Mityushchenko\Desktop\Fileholder\Fileholder\FIleholder.Domain\bin\Debug\System.Web.WebPages.dll
+C:\Users\Kirill_Mityushchenko\Desktop\Fileholder\Fileholder\FIleholder.Domain\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Users\Kirill_Mityushchenko\Desktop\Fileholder\Fileholder\FIleholder.Domain\bin\Debug\EntityFramework.xml
+C:\Users\Kirill_Mityushchenko\Desktop\Fileholder\Fileholder\FIleholder.Domain\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Kirill_Mityushchenko\Desktop\Fileholder\Fileholder\FIleholder.Domain\bin\Debug\System.Web.Helpers.xml
+C:\Users\Kirill_Mityushchenko\Desktop\Fileholder\Fileholder\FIleholder.Domain\bin\Debug\System.Web.Mvc.xml
+C:\Users\Kirill_Mityushchenko\Desktop\Fileholder\Fileholder\FIleholder.Domain\bin\Debug\System.Web.Razor.xml
+C:\Users\Kirill_Mityushchenko\Desktop\Fileholder\Fileholder\FIleholder.Domain\bin\Debug\System.Web.WebPages.xml
+C:\Users\Kirill_Mityushchenko\Desktop\Fileholder\Fileholder\FIleholder.Domain\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Users\Kirill_Mityushchenko\Desktop\Fileholder\Fileholder\FIleholder.Domain\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Users\Kirill_Mityushchenko\Desktop\Fileholder\Fileholder\FIleholder.Domain\bin\Debug\ru\EntityFramework.resources.dll
+C:\Users\Kirill_Mityushchenko\Desktop\Fileholder\Fileholder\FIleholder.Domain\bin\Debug\ru\EntityFramework.SqlServer.resources.dll
+C:\Users\Kirill_Mityushchenko\Desktop\Fileholder\Fileholder\FIleholder.Domain\bin\Debug\ru\System.Web.Helpers.resources.dll
+C:\Users\Kirill_Mityushchenko\Desktop\Fileholder\Fileholder\FIleholder.Domain\bin\Debug\ru\System.Web.Mvc.resources.dll
+C:\Users\Kirill_Mityushchenko\Desktop\Fileholder\Fileholder\FIleholder.Domain\bin\Debug\ru\System.Web.Razor.resources.dll
+C:\Users\Kirill_Mityushchenko\Desktop\Fileholder\Fileholder\FIleholder.Domain\bin\Debug\ru\System.Web.WebPages.resources.dll
+C:\Users\Kirill_Mityushchenko\Desktop\Fileholder\Fileholder\FIleholder.Domain\bin\Debug\ru\System.Web.WebPages.Deployment.resources.dll
+C:\Users\Kirill_Mityushchenko\Desktop\Fileholder\Fileholder\FIleholder.Domain\bin\Debug\ru\System.Web.WebPages.Razor.resources.dll
+C:\Users\Kirill_Mityushchenko\Desktop\Fileholder\Fileholder\FIleholder.Domain\obj\Debug\Fileholder.Domain.csprojAssemblyReference.cache
+C:\Users\Kirill_Mityushchenko\Desktop\Fileholder\Fileholder\FIleholder.Domain\obj\Debug\Fileholder.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Kirill_Mityushchenko\Desktop\Fileholder\Fileholder\FIleholder.Domain\obj\Debug\Fileholder.Domain.csproj.CopyComplete
+C:\Users\Kirill_Mityushchenko\Desktop\Fileholder\Fileholder\FIleholder.Domain\obj\Debug\Fileholder.Domain.dll
+C:\Users\Kirill_Mityushchenko\Desktop\Fileholder\Fileholder\FIleholder.Domain\obj\Debug\Fileholder.Domain.pdb

@@ -1,0 +1,148 @@
+--------------------------------------------------------------------
+—Œ«ƒ¿Õ»≈ “¿¡À»÷
+--------------------------------------------------------------------
+CREATE TABLE all_files(
+	[file_id] INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
+	[file_name] NVARCHAR(500) NOT NULL,
+	[file_extension] NVARCHAR(50) NOT NULL,
+	[file_size] INT NOT NULL
+)
+GO
+
+CREATE TABLE group_file_of_one_upload(
+	[group_file_id] INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
+	[user_name] NVARCHAR(256) NOT NULL
+	DEFAULT 'Anonymous'
+	FOREIGN KEY REFERENCES AspNetUsers([UserName])
+	ON DELETE SET DEFAULT,
+	[file_upload_date] DATETIME NOT NULL,
+	[group_file_guid] NVARCHAR(20) NOT NULL
+)
+GO
+
+CREATE TABLE all_files_and_group_files_link(
+	[id] INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
+	[file_id] INT NOT NULL
+	FOREIGN KEY REFERENCES all_files([file_id])
+	ON DELETE CASCADE,
+	[group_file_id] INT NOT NULL
+	FOREIGN KEY REFERENCES group_file_of_one_upload([group_file_id])
+	ON DELETE CASCADE
+)
+GO
+
+CREATE TABLE file_configs(
+	[file_configs_id] INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
+	[group_file_id] INT NOT NULL
+	FOREIGN KEY REFERENCES group_file_of_one_upload
+	ON DELETE CASCADE,
+	[password] NVARCHAR(20) DEFAULT NULL,
+	[description] NVARCHAR(1000) DEFAULT NULL,
+	[date_of_deletion] DATETIME NOT NULL,
+	[download_counter] INT DEFAULT 0
+)
+GO
+
+
+--------------------------------------------------------------------------------
+œ–Œ÷≈ƒ”–¿ — “–¿Õ«¿ ÷»≈… Õ¿ ”ƒ¿À≈Õ»≈ ‘¿…À¿ œŒ Guid
+--------------------------------------------------------------------------------
+
+CREATE PROCEDURE delete_group_files
+	@file_guid NVARCHAR(20)
+AS
+BEGIN	
+	BEGIN TRANSACTION
+		DELETE
+		    FROM file_configs
+		    WHERE group_file_id = @file_guid
+		DELETE
+		    FROM group_files_of_one_upload
+		    WHERE group_files_id = @file_guid
+		DELETE all_files
+		    FROM all_files af
+		    JOIN all_files_and_group_files_link afgfl
+		    ON af.file_id = afgfl.file_id
+		    JOIN group_files_of_one_upload gfou
+		    ON afgfl.group_files_id = gfou.group_files_id
+		IF @@ERROR <> 0
+		BEGIN
+		    ROLLBACK
+		END
+		ELSE
+		BEGIN
+		    COMMIT
+	END
+END
+GO
+
+
+--------------------------------------------------------------------------------
+◊¿—“Œ ﬁ«¿≈“—ﬂ
+--------------------------------------------------------------------------------
+SELECT * FROM all_files
+SELECT * FROM all_files_and_group_files_link
+SELECT * FROM file_configs
+SELECT * FROM group_file_of_one_upload
+
+DELETE FROM all_files
+DELETE FROM all_files_and_group_files_link
+DELETE FROM file_configs
+DELETE FROM group_file_of_one_upload
+
+
+
+---------------------------------------------------------------------------------
+“–»√√≈– Õ¿ À»Õ ”ﬁŸ”ﬁ “¿¡À»÷”, ”ƒ¿Àﬂ≈“ «¿œ»—» »« all_files
+---------------------------------------------------------------------------------
+CREATE TRIGGER delete_all_files
+ON all_files_and_group_files_link
+FOR DELETE
+AS DECLARE @file_id INT, @fetch_status INT = 0
+	DECLARE 
+	cursorCheckId CURSOR FOR
+	SELECT del.file_id
+	FROM deleted del
+	OPEN cursorCheckId
+		WHILE @fetch_status = 0
+		BEGIN
+			FETCH NEXT FROM cursorCheckId
+			INTO @file_id
+			SET @fetch_status = @@FETCH_STATUS
+			IF @fetch_status = 1
+				BREAK
+			DELETE all_files FROM all_files af
+			WHERE af.file_id = @file_id
+		END
+	CLOSE cursorCheckId
+GO
+
+
+
+---------------------------------------------------------------------------------
+”¬≈À»◊≈Õ»≈ —◊≈“◊» ¿ — ¿◊»¬¿Õ»…
+---------------------------------------------------------------------------------
+
+CREATE PROCEDURE increase_download_count
+	@file_guid NVARCHAR(20)
+AS
+BEGIN
+BEGIN TRANSACTION
+		UPDATE file_configs
+SET download_counter += 1
+WHERE group_file_id = (
+	SELECT gfou.group_file_id
+	FROM group_file_of_one_upload gfou
+	JOIN file_configs fc
+	ON gfou.group_file_id = fc.group_file_id
+	WHERE gfou.group_file_guid = @file_guid)		
+		IF @@ERROR <> 0
+		BEGIN
+		    ROLLBACK
+		END
+		ELSE
+		BEGIN
+		    COMMIT
+	END
+END
+GO

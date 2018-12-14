@@ -1,0 +1,18 @@
+﻿@using Fileholder.Models
+@model List<FilesForAllFiles>
+
+<div class="container container-fluid bg-dark" style="color: white; padding-top: 30px; border: 3px dashed;">
+    <h2>СПИСОК ФАЙЛОВ</h2>
+    @{
+        foreach (var item in Model)
+        {
+            <div class="bg-dark table-bordered">
+                <p>Имя пользователя: @item.UserName</p>
+                <p>Размер файлов: @item.TotalFileSize</p>
+                <p>Количество файлов: @item.NumberOfFiles</p>
+                <p>Ссылка на файлы: @Html.ActionLink(item.DownloadLink, "ShowUploadedFile", "UploadFiles", new { id = item.FileGuid }, null)</p>
+            </div>
+            <hr />
+        }
+    }
+</div>

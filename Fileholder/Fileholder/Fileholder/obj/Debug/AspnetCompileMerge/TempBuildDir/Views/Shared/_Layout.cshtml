@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+
+<body class="Site-background-body">
+    <nav class="bg-dark navbar-dark fixed-top" style="height: 60px;">
+        <div class="d-flex justify-content-around mb-3">
+            <div class="p-2 ">
+                <a href="/">
+                    <img class="" src="~/Content/img/logo-fileholder-white.png" />
+                </a>
+                <button class="text-white">ВСЕ ФАЙЛЫ(в разработке)</button>
+                
+            </div>
+            <div class="d-flex justify-content-around mb-3">
+                <div class="p-2 ">
+                    @Html.Partial("_LoginPartial")
+                </div>
+                <input type="text" placeholder="Поиск(в разработке)"/>
+            </div>
+        </div>
+    </nav>
+    <div class="container body-content">
+        <div class="text-center">@RenderBody()</div>
+    </div>
+    <div class="bg-dark text-center fixed-bottom" )>
+        <p class="text-white">Created by Xelestry</p>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+</body>
+</html>
