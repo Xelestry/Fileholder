@@ -48,9 +48,9 @@
                                     <div class="card-body bg-dark border-warning text-white">
                                         Вес файла: @item.FileSize<br />
                                         @{
-                                            if (item.FileExtension == ".jpg" ||
-                                                    item.FileExtension == ".jpeg" ||
-                                                    item.FileExtension == ".png")
+                                            if (item.FileExtension.ToLower() == ".jpg" ||
+                                                    item.FileExtension.ToLower() == ".jpeg" ||
+                                                    item.FileExtension.ToLower() == ".png")
                                             {
                                                 Html.RenderPartial("OnePictureFile", item);
                                             } }
@@ -105,9 +105,9 @@ else if (Model.First().FilePassword == null)
                                     <div class="card-body bg-dark border-warning text-white">
                                         Вес файла: @item.FileSize<br />
                                         @{
-                                            if (item.FileExtension == ".jpg" ||
-                                                    item.FileExtension == ".jpeg" ||
-                                                    item.FileExtension == ".png")
+                                            if (item.FileExtension.ToLower() == ".jpg" ||
+                                                    item.FileExtension.ToLower() == ".jpeg" ||
+                                                    item.FileExtension.ToLower() == ".png")
                                             {
                                                 Html.RenderPartial("OnePictureFile", item);
                                             } }
