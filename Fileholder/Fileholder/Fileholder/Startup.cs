@@ -2,7 +2,8 @@
 using Owin;
 using Newtonsoft.Json;
 
-[assembly: OwinStartupAttribute(typeof(Fileholder.Startup))]
+[assembly: OwinStartup(typeof(Fileholder.Startup))]
+[assembly: log4net.Config.XmlConfigurator(Watch = true)]
 namespace Fileholder
 {
     public partial class Startup

@@ -7,6 +7,7 @@ using Fileholder.Domain.Abstract;
 using Fileholder.Domain;
 using Fileholder.Models;
 using Microsoft.AspNet.Identity;
+using log4net;
 
 namespace Fileholder.Controllers
 {
@@ -17,6 +18,7 @@ namespace Fileholder.Controllers
         private IGroupFilesOfOneUploadRepository RepositoryGroupFiles;
         private IAllFilesAndGroupFilesLinkRepository RepositoryLinkFiles;
         private IFileConfigsRepository RepositoryFileConfigs;
+        private static readonly ILog log = Logging.LogManager.ViewFileLog();
 
         public UploadFilesController(
             IAllFilesRepository allFiles,
@@ -32,6 +34,7 @@ namespace Fileholder.Controllers
         }
         #endregion
 
+        
         #region ShowUploadedFile
         /// <summary>
         /// Выводит загруженные файлы, которые были загружены за один раз, все вместе. Если файлов
@@ -41,7 +44,7 @@ namespace Fileholder.Controllers
         /// <returns>Возвращается страница с файлами</returns>
         [HttpGet]
         public ActionResult ShowUploadedFile(string id)
-        {
+        {           
             string fileGuid = id;
             List<AllFiles> AllFiles = RepositoryAllFiles.GetFilesByFileGuid(fileGuid);
 
@@ -96,8 +99,8 @@ namespace Fileholder.Controllers
             }
 
             ViewBag.LinkForDownload = Request.Url.Authority + "/" + fileGuid;
-            ViewBag.CurrentUser = User.Identity.GetUserName();
-
+            ViewBag.CurrentUser = showUploadedFilesViewModel[0].UserLogin;
+            log.Info(" - VIEW FILE\nFile id: " + fileGuid + "\nUser: " + ViewBag.CurrentUser + "\nUser IP: " + GetUserIP());
             return View(showUploadedFilesViewModel);
         }
         #endregion
@@ -394,5 +397,17 @@ namespace Fileholder.Controllers
             RepositoryFileConfigs.DeleteGroupFiles(fileGuid);
         }
         #endregion
+
+        private string GetUserIP()
+        {
+            string ipList = Request.ServerVariables["HTTP_X_FORWARDED_FOR"];
+
+            if (!string.IsNullOrEmpty(ipList))
+            {
+                return ipList.Split(',')[0];
+            }
+
+            return Request.ServerVariables["REMOTE_ADDR"];
+        }
     }
 }
