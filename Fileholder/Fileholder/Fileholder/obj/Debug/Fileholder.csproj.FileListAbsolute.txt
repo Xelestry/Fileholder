@@ -403,3 +403,5 @@ C:\Fileholder\Fileholder\Fileholder\Fileholder\obj\Debug\Fileholder.csproj.CoreC
 C:\Fileholder\Fileholder\Fileholder\Fileholder\obj\Debug\Fileholder.csproj.CopyComplete
 C:\Fileholder\Fileholder\Fileholder\Fileholder\obj\Debug\Fileholder.dll
 C:\Fileholder\Fileholder\Fileholder\Fileholder\obj\Debug\Fileholder.pdb
+C:\Fileholder\Fileholder\Fileholder\Fileholder\bin\log4net.dll
+C:\Fileholder\Fileholder\Fileholder\Fileholder\bin\log4net.xml
