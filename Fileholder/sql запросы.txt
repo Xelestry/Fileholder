@@ -53,18 +53,20 @@ CREATE PROCEDURE delete_group_files
 AS
 BEGIN	
 	BEGIN TRANSACTION
-		DELETE
-		    FROM file_configs
-		    WHERE group_file_id = @file_guid
-		DELETE
-		    FROM group_files_of_one_upload
-		    WHERE group_files_id = @file_guid
+		DELETE file_configs
+		    FROM file_configs fc
+		    JOIN group_file_of_one_upload gfou ON fc.group_file_id = gfou.group_file_id
+			WHERE gfou.group_file_guid = @file_guid
 		DELETE all_files
 		    FROM all_files af
 		    JOIN all_files_and_group_files_link afgfl
 		    ON af.file_id = afgfl.file_id
-		    JOIN group_files_of_one_upload gfou
-		    ON afgfl.group_files_id = gfou.group_files_id
+		    JOIN group_file_of_one_upload gfou
+		    ON afgfl.group_file_id = gfou.group_file_id
+			WHERE gfou.group_file_guid = @file_guid
+		DELETE group_file_of_one_upload
+		    FROM group_file_of_one_upload
+		    WHERE group_file_guid = @file_guid	
 		IF @@ERROR <> 0
 		BEGIN
 		    ROLLBACK
