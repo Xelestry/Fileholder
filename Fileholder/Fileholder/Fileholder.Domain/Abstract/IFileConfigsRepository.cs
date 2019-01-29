@@ -16,5 +16,6 @@ namespace Fileholder.Domain.Abstract
         void DeleteGroupFiles(string fileGuid);
         void IncreaseDownloadCount(string fileGuid);
         FileConfigs GetConfigsByFileGuid(string fileGuid);
+        Task SetPasswordOnFiles(string pass, string fileGuid);
     }
 }

@@ -335,7 +335,6 @@
     <Compile Include="Controllers\JsPageController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\UploadFilesController.cs" />
-    <Compile Include="Controllers\UserFilesController.cs" />
     <Compile Include="Controllers\DownloadFilesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -401,10 +400,8 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\OnePictureFile.cshtml" />
     <Content Include="Views\UploadFiles\ShowSearchedFiles.cshtml" />
-    <Content Include="Views\Shared\_SearchFiles.cshtml" />
     <Content Include="Views\Manage\DisplayEmailMsgForConfirm.cshtml" />
     <Content Include="Views\UploadFiles\ShowAllFiles.cshtml" />
-    <Content Include="Views\FileConfigs\SetPassword.cshtml" />
     <Content Include="Views\UploadFiles\ShowAllUserFiles.cshtml" />
     <Content Include="Views\JsPage\JsPage.cshtml" />
     <None Include="Web.Debug.config">

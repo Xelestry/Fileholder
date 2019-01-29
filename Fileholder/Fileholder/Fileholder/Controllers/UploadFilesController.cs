@@ -92,7 +92,7 @@ namespace Fileholder.Controllers
                     FileUploadTime = RepositoryGroupFiles.GetUploadDate(fileGuid),
                     TotalSizeAllFiles = GetFileSize(totalFilesSize),
                     UserLogin = RepositoryGroupFiles.GetUserName(fileGuid),
-                    FilePassword = null,
+                    FilePassword = fileConfigs.Password,
                     NumberOfDownload = (int)fileConfigs.DownloadCounter,
                     FileDeleteTime = fileConfigs.DateOfDeletion
                 });
@@ -101,6 +101,16 @@ namespace Fileholder.Controllers
             ViewBag.LinkForDownload = Request.Url.Authority + "/" + fileGuid;
             ViewBag.CurrentUser = showUploadedFilesViewModel[0].UserLogin;
             log.Info(" - VIEW FILE\nFile id: " + fileGuid + "\nUser: " + ViewBag.CurrentUser + "\nUser IP: " + GetUserIP());
+
+            if(ViewBag.Currentuser == showUploadedFilesViewModel[0].UserLogin && showUploadedFilesViewModel[0].UserLogin != "Anonymous")
+            {
+                //Вернуть view ТОЛЬКО для залогиненого юзера, даже если на файле установлен пароль
+            }
+            else if(showUploadedFilesViewModel[0].FilePassword == null && ViewBag.CurrentUser )
+            {
+                 //
+            }
+
             return View(showUploadedFilesViewModel);
         }
         #endregion
@@ -305,6 +315,8 @@ namespace Fileholder.Controllers
 
             return View(forAllFiles);
         }
+
+        
 
         //public ActionResult ShowSearchedFiles(string fileName)
         //{
