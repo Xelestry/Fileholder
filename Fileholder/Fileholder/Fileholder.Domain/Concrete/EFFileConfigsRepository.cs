@@ -84,5 +84,11 @@ namespace Fileholder.Domain.Concrete
 
             return fileConfigs;
         }
+
+        public async Task SetPasswordOnFiles(string pass, string fileGuid)
+        {
+            await context.Database.ExecuteSqlCommandAsync("set_password_on_files {0},{1}", pass, fileGuid);
+        }
+
     }
 }

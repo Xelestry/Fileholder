@@ -9,6 +9,8 @@ using System.Net.Mail;
 using System.Threading.Tasks;
 using Quartz.Impl;
 using Fileholder.Models;
+using System.Web.Services;
+using System.Web.Script.Services;
 
 namespace Fileholder.Controllers
 {
@@ -58,13 +60,21 @@ namespace Fileholder.Controllers
             return RepositoryFileConfigs.GetAllFilesConfigs();
         }
 
-        
-        [HttpPost]
-        public ActionResult SetPassword(string pass)
+        public void SetPassword(string pass, string fileGuid)
         {
-            FileConfigs allbooks = new FileConfigs();
+            RepositoryFileConfigs.SetPasswordOnFiles(pass, fileGuid);
+        }
 
-            return PartialView(allbooks);
+        public ActionResult CheckPassForFile(string pass, string fileGuid)
+        {
+            var fileConfig = RepositoryFileConfigs.GetConfigsByFileGuid(fileGuid);
+
+            if(fileConfig.Password == pass)
+            {
+                return View();
+            }
+
+            return View();
         }
     }
 

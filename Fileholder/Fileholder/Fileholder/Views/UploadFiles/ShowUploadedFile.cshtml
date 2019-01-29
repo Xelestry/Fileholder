@@ -25,13 +25,14 @@
                         @Html.ActionLink("Скачать все файлы", "DownloadAllFiles", "DownloadFiles", new { fileGuid = Model.First().FileGuid }, new { @class = "btn btn-warning btn-lg", type = "button " })
                         @Html.ActionLink("Удалить файлы", "DeleteFiles", "UploadFiles", new { fileGuid = Model.First().FileGuid }, new { @class = "btn btn-danger btn-lg", type = "button " })
                     </div>
-                    @*ПАРОЛЬ:
-                        @using (Ajax.BeginForm("SetPassword", "FileConfigs", new AjaxOptions {UpdateTargetId = "results", HttpMethod = "POST" }))
+                    ПАРОЛЬ:
+                        @using (Ajax.BeginForm("SetPassword", "FileConfigs", new AjaxOptions { HttpMethod = "GET" , OnSuccess = ""}))
                         {
-                            <input id="" type="text" name="pass" />
-                            <input id="" type="submit" value="Подтвердить" />
+                            <input type="text" name="pass" />
+                            <input type="hidden" name="fileGuid" value="@Model[0].FileGuid" />
+                            <input type="submit" value="Подтвердить" />
                         }
-                        <div id="results"></div>*@
+                        <div id="results"></div>
                 </div>
                 <div class="p-2 flex-column " style="opacity: 1;"></div>
                 <div class="p-2 flex-fill scroll-block Site-right-block">
@@ -128,20 +129,16 @@ else if (Model.First().FilePassword == null)
 }
 else
 {
-    <div>Для доступа к файлу введите пароль</div>
+    <div class="container badge-dark border-danger border">
+        <div style="height: 100px">Для доступа к файлу введите пароль</div>
+
+        @using (Html.BeginForm("CheckPassForFile", "FileConfigs"))
+        {
+            <input type="text" name="pass" />
+            <input type="hidden" name="fileGuid" value="@Model[0].FileGuid" />
+            <input type="submit" value="Подтвердить" />
+        }
+    </div>
 }
 
 
-
-<script>
-function doAjax() {
-    $.ajax({
-        type: 'GET',
-        url: 'default.aspx/GetCurrentTime',
-        contentType: "application/json; charset=utf-8",
-        success: function (data) {
-            currentDate.html("<h2>" + data.d + "</h2>");
-        },
-    });
-}
-</script>

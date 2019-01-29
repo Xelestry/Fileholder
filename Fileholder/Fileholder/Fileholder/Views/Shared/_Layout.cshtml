@@ -12,6 +12,7 @@
     @Scripts.Render("~/Scripts/jquery-3.3.1.min.js")
     @Scripts.Render("~/Scripts/validate.min.js")
     @Scripts.Render("~/Scripts/Site.js")
+    @Scripts.Render("~/Scripts/jquery.unobtrusive-ajax.min.js")
 
 
 </head>
@@ -40,7 +41,9 @@
     </nav>
     <div class="container body-content">
         <div class="text-center">
+            
             @RenderBody()
+
         </div>
     </div>
     <div class="bg-dark text-center fixed-bottom" )>
